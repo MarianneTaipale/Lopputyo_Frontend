@@ -14,13 +14,14 @@ function CustomerList() {
   }
 
   const columns: GridColDef[] = [
-    { field: "firstname", headerName: "Firstname", width: 150 },
-    { field: "lastname", headerName: "Lastname", width: 150 },
-    { field: "streetaddress", headerName: "Address", width: 200 },
-    { field: "postcode", headerName: "Postcode", width: 100 },
-    { field: "city", headerName: "City", width: 150 },
-    { field: "email", headerName: "Email", width: 200 },
-    { field: "phone", headerName: "Phone", width: 150 },
+    { field: "firstname", headerName: "Firstname", width: 150, sortable: true },
+    { field: "lastname", headerName: "Lastname", width: 150, sortable: true },
+    { field: "streetaddress", headerName: "Address", width: 200, sortable: true },
+    { field: "postcode", headerName: "Postcode", width: 100, sortable: true },
+    { field: "city", headerName: "City", width: 150, sortable: true },
+    { field: "email", headerName: "Email", width: 200, sortable: true },
+    { field: "phone", headerName: "Number", width: 150 , sortable: true},
+
   ];
 
   return (

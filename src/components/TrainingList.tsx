@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-alpine.css";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
 
 function TrainingList() {
@@ -15,9 +13,22 @@ function TrainingList() {
     }
 
     const columns: GridColDef[] = [
-        { field: 'date', headerName: 'Date' },
-        { field: 'duration', headerName: 'Duration' },
-        { field: 'activity', headerName: 'Activity' }
+        { field: 'date', headerName: 'Date', width: 200, sortable: true },
+        { field: 'duration', headerName: 'Duration', width: 200, sortable: true },
+        { field: 'activity', headerName: 'Activity', width: 200, sortable: true },
+        {
+            field: 'firstname',
+            headerName: 'Firstname',
+            width: 200,
+            sortable: true
+        },
+
+        {
+            field: 'lastname',
+            headerName: 'Lastname',
+            width: 200,
+            sortable: true
+        }
     ]
 
     return (
