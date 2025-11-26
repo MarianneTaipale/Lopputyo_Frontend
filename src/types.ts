@@ -6,7 +6,11 @@ export type Training = {
 
 export type Customer = {
     id: number;
-    date: Date;
-    duration: number;
-    customer: string;
+    firstname: string;
+    lastname: string;
+    streetaddress: string;
+    postcode: number;
+    city: string;
+    email: string;
+    phone: number;
 }

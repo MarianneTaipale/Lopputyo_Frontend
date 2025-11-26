@@ -1,17 +1,14 @@
 import './App.css'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Customers from './Customers';
-import Trainings from './Trainings';
+import CustomerList from './components/CustomerList';
+import TrainingList from './components/TrainingList';
+
+
 
 function App() {
-
   return (
-    <Router>
-      <Routes>
-        <Route path="/" elements={<Customers/>} />
-        <Route path="/trainings" elements={<Trainings/>}/>
-      </Routes>
-    </Router>
+    <div className='App'>
+      <CustomerList/>
+    </div>
   )
 }
 
