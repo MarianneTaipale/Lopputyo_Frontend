@@ -19,8 +19,8 @@ function CustomerList() {
     { field: "streetaddress", headerName: "Address", width: 200, sortable: true },
     { field: "postcode", headerName: "Postcode", width: 100, sortable: true },
     { field: "city", headerName: "City", width: 150, sortable: true },
-    { field: "email", headerName: "Email", width: 200, sortable: true },
-    { field: "phone", headerName: "Number", width: 150 , sortable: true},
+    { field: "email", headerName: "Email", width: 150, sortable: true },
+    { field: "phone", headerName: "Number", width: 200 , sortable: true},
 
   ];
 

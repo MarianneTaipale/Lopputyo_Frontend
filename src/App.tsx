@@ -11,20 +11,20 @@ import { Routes, Route, Link } from "react-router-dom";
 function App() {
   return (
     <div className='App'>
-      <AppBar position="static">
+      <AppBar>
         <Toolbar>
           <Typography variant="h6">
             Personal Trainer
           </Typography>
-
-          <Button color='inherit' component={Link} to="/customers">
-            Customers
-          </Button>
-          <Button color='inherit' component={Link} to="/trainings">
-            Trainings
-          </Button>
         </Toolbar>
+
       </AppBar>
+      <Button color='inherit' component={Link} to="/customers">
+        Customers
+      </Button>
+      <Button color='inherit' component={Link} to="/trainings">
+        Trainings
+      </Button>
 
       <Routes>
         <Route path='/' element={<CustomerList />} />

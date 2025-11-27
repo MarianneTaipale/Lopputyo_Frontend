@@ -18,17 +18,10 @@ function TrainingList() {
         { field: 'activity', headerName: 'Activity', width: 200, sortable: true },
         {
             field: 'firstname',
-            headerName: 'Firstname',
+            headerName: 'Customer',
             width: 200,
             sortable: true
         },
-
-        {
-            field: 'lastname',
-            headerName: 'Lastname',
-            width: 200,
-            sortable: true
-        }
     ]
 
     return (
