@@ -9,8 +9,8 @@ export type Customer = {
     firstname: string;
     lastname: string;
     streetaddress: string;
-    postcode: number;
+    postcode: string;
     city: string;
     email: string;
-    phone: number;
+    phone: string;
 }
