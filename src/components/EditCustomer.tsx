@@ -38,12 +38,12 @@ export default function EditCustomer(props) {
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCustomer({ ...customer, [event.target.name]: event.target.value })
-    }
+    };
 
-    const addCustomer = () => {
-        props.saveCustomer(customer);
+    const updateCustomer = () => {
+        props.updateCustomer(customer, props.customer._links.self.href)
         handleClose();
-    }
+    };
 
     return (
         <div>
@@ -118,7 +118,7 @@ export default function EditCustomer(props) {
                     <Button onClick={handleClose}>
                         Cancel
                     </Button>
-                    <Button onClick={addCustomer}>
+                    <Button onClick={updateCustomer}>
                         Save
                     </Button>
                 </DialogActions>

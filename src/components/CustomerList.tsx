@@ -37,7 +37,18 @@ function CustomerList() {
     })
       .then(res => fetchData())
       .catch(err => console.error(err))
+  }
 
+  const updateCustomer = (customer, link) => {
+    fetch(link, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      }, 
+      body: JSON.stringify(customer)
+    })
+    .then(res => fetchData())
+    .catch(err => console.log(err))
   }
 
   const columns: GridColDef[] = [
@@ -52,9 +63,9 @@ function CustomerList() {
       headerName: "",
       sortable: false,
       filterable: false,
-      field: "Edit",
+      field: "edit",
       renderCell: (params: GridRenderCellParams) => (
-        <EditCustomer customer={params.row}/>
+        <EditCustomer customer={params.row} updateCustomer={updateCustomer}/>
       )
     },
 
