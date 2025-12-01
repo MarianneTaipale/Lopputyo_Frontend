@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { DataGrid, type GridColDef, type GridRenderCellParams } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
 import AddTraining from "./AddTraining";
-import { duration } from "@mui/material/styles";
 
 function TrainingList() {
     const [trainings, setTrainings] = useState([]);
@@ -16,7 +15,7 @@ function TrainingList() {
     }
 
     const deleteTraining = (url: string) => {
-        return fetch(url, { method: "DELETE" })
+        return fetch(url, { method: "DELETE" });
     }
 
     const handleDelete = (url: string) => {
@@ -26,25 +25,19 @@ function TrainingList() {
         }
     }
 
-    const saveTraining = (training, customer) => {
-
-        const body = {
-            date: training.date,
-            activity: training.activity,
-            duration: training.duration,
-            customer: customer
-        }; 
+    const saveTraining = (training) => {
 
         fetch('https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/trainings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            }, 
-            body: JSON.stringify(body)
+            },
+            body: JSON.stringify(training)
         })
-        .then(res => fetchData())
-        .catch(err => console.error(err))
+            .then(res => fetchData())
+            .catch(err => console.error(err))
     }
+
 
     const columns: GridColDef[] = [
         { field: 'date', headerName: 'Date', width: 200, sortable: true },
@@ -76,7 +69,7 @@ function TrainingList() {
             <DataGrid
                 rows={trainings}
                 columns={columns}
-                getRowId={(row) => row.id}
+                getRowId={(row) => "https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/trainings/" + row.id}
                 autoPageSize
             />
         </div>
