@@ -69,7 +69,7 @@ function TrainingList() {
             <DataGrid
                 rows={trainings}
                 columns={columns}
-                getRowId={(row) => "https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/trainings/" + row.id}
+            getRowId={(row) => "https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/trainings/" + row.id}
                 autoPageSize
             />
         </div>
