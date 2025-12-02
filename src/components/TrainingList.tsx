@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { DataGrid, type GridColDef, type GridRenderCellParams } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
 import AddTraining from "./AddTraining";
+import { format, parseISO} from "date-fns";
 
 function TrainingList() {
     const [trainings, setTrainings] = useState([]);
@@ -40,7 +41,14 @@ function TrainingList() {
 
 
     const columns: GridColDef[] = [
-        { field: 'date', headerName: 'Date', width: 200, sortable: true },
+        {
+            field: 'date', headerName: 'Date', width: 200, sortable: true,
+            renderCell: (params: GridRenderCellParams) => {
+            if (!params.value) return '';
+            const date = parseISO(params.value as string);
+            return format(date, 'dd.MM.yyyy HH:mm');
+        }
+        },
         { field: 'duration', headerName: 'Duration', width: 200, sortable: true },
         { field: 'activity', headerName: 'Activity', width: 200, sortable: true },
         {
@@ -65,11 +73,11 @@ function TrainingList() {
 
     return (
         <div style={{ width: '100%', height: 500, margin: 'auto' }}>
-            <AddTraining saveTraining={saveTraining}/>
+            <AddTraining saveTraining={saveTraining} />
             <DataGrid
                 rows={trainings}
                 columns={columns}
-            getRowId={(row) => "https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/trainings/" + row.id}
+                getRowId={(row) => "https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/trainings/" + row.id}
                 autoPageSize
             />
         </div>
