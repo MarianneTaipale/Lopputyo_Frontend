@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Calendar as BigCalendar, dateFnsLocalizer, Views } from 'react-big-calendar';
+import { Calendar as BigCalendar, dateFnsLocalizer} from 'react-big-calendar';
 import { format, parse, startOfWeek, getDay } from "date-fns";
 import { fi } from "date-fns/locale";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -38,17 +38,17 @@ export default function TrainingCalendar() {
     };
 
     return (
-        <div>
+<div style={{ padding: 20, marginTop: 64, height: "80vh" }}>
             <h2>Training Calender</h2>
             <BigCalendar
                 localizer={localizer}
                 events={bookings}
                 startAccessor="start"
                 endAccessor="end"
-                style={{ height: 600}}
-                views= {{month: true, week: true, day: true}}
-                defaultView= {Views.month}
-                
+                style={{ height: 600 }}
+                views={["month", "week", "day"]}
+                defaultView="month"
+
             />
         </div>
     )
