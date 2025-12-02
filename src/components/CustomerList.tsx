@@ -4,11 +4,24 @@ import type { GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
 import AddCustomer from "./AddCustomer";
 import EditCustomer from "./EditCustomer";
-
 function CustomerList() {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => fetchData, []);
+
+/*   const customerlistToCSV = () => {
+
+    // määrittelee sarakkeet jotka halutaan viedä
+    const columns = [
+      "firstname", 
+      "lastname", 
+      "streetaddress", 
+      "postcode", 
+      "city", 
+      "email",
+      "phone"
+    ];
+  } */
 
   const fetchData = () => {
     fetch('https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/customers')

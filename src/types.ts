@@ -3,6 +3,10 @@ export type Training = {
     date: string;
     duration: number;
     activity: string;
+    customer: {
+        firstname: string;
+        lastname: string;
+    }
 }
 
 export type Customer = {

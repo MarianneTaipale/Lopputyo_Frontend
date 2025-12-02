@@ -15,8 +15,11 @@
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.5",
     "@mui/x-data-grid": "^8.19.0",
+    "date-fns": "^4.1.0",
     "dayjs": "^1.11.19",
     "react": "^19.1.1",
+    "react-big-calendar": "^1.19.4",
+    "react-csv": "^2.2.2",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.6"
   },

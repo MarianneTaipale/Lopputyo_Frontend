@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Routes, Route, Link } from "react-router-dom";
-
+import Calendar from './components/Calendar';
 
 function App() {
   return (
@@ -26,7 +26,12 @@ function App() {
         Trainings
       </Button>
 
+      <Button color='inherit' component={Link} to="/calender">
+        Training Calender
+      </Button>
+
       <Routes>
+        <Route path='/calender' element={<Calendar/>} />
         <Route path='/' element={<CustomerList />} />
         <Route path='/customers' element={<CustomerList />} />
         <Route path='/trainings' element={<TrainingList />} />
