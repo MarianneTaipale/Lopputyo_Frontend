@@ -17,7 +17,6 @@ export default function ChartsPage() {
         fetch('https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/gettrainings')
             .then(res => res.json())
             .then((trainings: Training[]) => {
-                // Lasketaan kestot minuutteina per activity
                 const summary: { [key: string]: number } = {};
                 trainings.forEach(t => {
                     if (!summary[t.activity]) summary[t.activity] = 0;
