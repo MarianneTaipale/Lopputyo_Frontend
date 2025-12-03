@@ -34,8 +34,8 @@ export default function ChartsPage() {
     }
 
     return (
-        <div style={{ width: '90%', height: 500, margin: 'auto', marginTop: 20 }}>
-            <h2>Harjoitustyyppien kestot minuutteina</h2>
+        <div style={{ width: "100%", height: 500, padding: "20px" }}>
+            <h2>Activity in minutes</h2>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -48,4 +48,5 @@ export default function ChartsPage() {
             </ResponsiveContainer>
         </div>
     );
+
 }     

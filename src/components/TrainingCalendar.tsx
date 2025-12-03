@@ -4,7 +4,6 @@ import { format, parse, startOfWeek, getDay } from "date-fns";
 import { fi } from "date-fns/locale";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-
 const locales = { fi };
 
 const localizer = dateFnsLocalizer({
@@ -39,7 +38,7 @@ export default function TrainingCalendar() {
 
     return (
 <div style={{ padding: 20, marginTop: 64, height: "80vh" }}>
-            <h2>Training Calender</h2>
+            <h2>Training Calendar</h2>
             <BigCalendar
                 localizer={localizer}
                 events={bookings}
